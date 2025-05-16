@@ -8,7 +8,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-	default: Mohammad_Imran,
+	default: Prince_Junior,
 	useMultiFileAuthState,
 	jidNormalizedUser,
 	Browsers,
@@ -28,13 +28,13 @@ const {
 } = require("node:fs/promises")
 router.get('/', async (req, res) => {
 	const id = makeid();
-	async function IMRAN_MD_QR_CODE() {
+	async function PRINCE_JUNIOR_V2_QR_CODE() {
 		const {
 			state,
 			saveCreds
 		} = await useMultiFileAuthState('./temp/' + id)
 		try {
-			let Qr_Code_By_Imran = Mohammad_Imran({
+			let Qr_Code_By_Punior_Junior = Prince_Junior({
 				auth: state,
 				printQRInTerminal: false,
 				logger: pino({
@@ -43,8 +43,8 @@ router.get('/', async (req, res) => {
 				browser: Browsers.macOS("Desktop"),
 			});
 
-			Qr_Code_By_Imran.ev.on('creds.update', saveCreds)
-			Qr_Code_By_Imran.ev.on("connection.update", async (s) => {
+			Qr_Code_By_Punior_Junior.ev.on('creds.update', saveCreds)
+			Qr_Code_By_Punior_Junior.ev.on("connection.update", async (s) => {
 				const {
 					connection,
 					lastDisconnect,
