@@ -56,28 +56,28 @@ router.get('/', async (req, res) => {
 					let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
 					await delay(800);
 				   let b64data = Buffer.from(data).toString('base64');
-				   let session = await Qr_Code_By_Imran.sendMessage(Qr_Code_By_Imran.user.id, { text: 'IMRAN-MD;;;' + b64data });
+				   let session = await Qr_Code_By_Punior_Junior.sendMessage(Qr_Code_By_Punior_Junior.user.id, { text: 'IMRAN-MD;;;' + b64data });
 	
-				   let IMRAN_MD_TEXT = `
+				   let PRINCE_JUNIOR_V2_TEXT = `
 ╔════◇
-║ *『 WAOW YOU CHOOSE IMRAN-MD 』*
+║ *『 WAOW YOU CHOOSE PRINCE JUNIOR V2』*
 ║ _You complete first step to making Bot._
 ╚════════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║ *Owner:* _https://wa.me/+8801689903267_
+║ *Owner:* _https://wa.me/+254723245807_
 ║ *Note :*_Don't provide your SESSION_ID to_
 ║ _anyone otherwise that can ac`
-	 await Qr_Code_By_Imran.sendMessage(Qr_Code_By_Imran.user.id,{text:IMRAN_MD_TEXT},{quoted:session})
+	 await Qr_Code_By_Punior_Junior.sendMessage(Qr_Code_By_Punior_Junior.user.id,{text:PRINCE_JUNIOR_V2_TEXT},{quoted:session})
 
 
 
 					await delay(100);
-					await Qr_Code_By_Imran.ws.close();
+					await Qr_Code_By_Punior_Junior.ws.close();
 					return await removeFile("temp/" + id);
 				} else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
 					await delay(10000);
-					IMRAN_MD_QR_CODE();
+					PRINCE_JUNIOR_V2_QR_CODE();
 				}
 			});
 		} catch (err) {
@@ -90,6 +90,6 @@ router.get('/', async (req, res) => {
 			await removeFile("temp/" + id);
 		}
 	}
-	return await IMRAN_MD_QR_CODE()
+	return await PRINCE_JUNIOR_V2_QR_CODE()
 });
 module.exports = router
